@@ -24,6 +24,7 @@ def my_reduce(f, list1):
         ans = f(ans, i)
     return ans
 
+#file of commands for calculator
 commands = open("commands.txt")
 answers = open("answers.txt", "w")
 
