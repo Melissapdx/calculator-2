@@ -15,6 +15,7 @@ repeat forever:
 
 from arithmetic import *
 
+
 def my_reduce(f, list1):
     """ Function that takes in a function and a list
     and does the same as the python reduce function """
@@ -29,20 +30,20 @@ while True:
     if tokens[0] == "q":
         break
     elif tokens[0] == "+":
-        print reduce(add, make_list_into_float(tokens[1:]))
+        print "{:.2f}".format(my_reduce(add, make_list_into_float(tokens[1:])))
     elif tokens[0] == "-":
-        print reduce(subtract, make_list_into_float(tokens[1:]))
+        print "{:.2f}".format(my_reduce(subtract, make_list_into_float(tokens[1:])))
     elif tokens[0] == "*":
-        print reduce(multiply, make_list_into_float(tokens[1:]))
+        print "{:.2f}".format(my_reduce(multiply, make_list_into_float(tokens[1:])))
     elif tokens[0] == "/":
-        print reduce(divide, make_list_into_float(tokens[1:]))
+        print "{:.2f}".format(my_reduce(divide, make_list_into_float(tokens[1:])))
     elif tokens[0] == "square":
-        print square(float(tokens[1]))
+        print "{:.2f}".format(square(float(tokens[1])))
     elif tokens[0] == "cube":
-        print cube(float(tokens[1]))
+        print "{:.2f}".format(cube(float(tokens[1])))
     elif tokens[0] == "pow":
-        print reduce(power, make_list_into_float(tokens[1:]))
+        print "{:.2f}".format(my_reduce(power, make_list_into_float(tokens[1:])))
     elif tokens[0] == "mod":
-        print reduce(mod, make_list_into_float(tokens[1:]))
+        print "{:.2f}".format(my_reduce(mod, make_list_into_float(tokens[1:])))
     else:
         print "not a valid option"
