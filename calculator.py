@@ -21,20 +21,20 @@ while True:
     if tokens[0] == "q":
         break
     elif tokens[0] == "+":
-        print add(float(tokens[1]), float(tokens[2]))
+        print reduce(add, make_list_into_float(tokens[1:]))
     elif tokens[0] == "-":
-        print subtract(float(tokens[1]), float(tokens[2]))
+        print reduce(subtract, make_list_into_float(tokens[1:]))
     elif tokens[0] == "*":
-        print multiply(float(tokens[1]), float(tokens[2]))
+        print reduce(multiply, make_list_into_float(tokens[1:]))
     elif tokens[0] == "/":
-        print divide(float(tokens[1]), float(tokens[2]))
+        print reduce(divide, make_list_into_float(tokens[1:]))
     elif tokens[0] == "square":
         print square(float(tokens[1]))
     elif tokens[0] == "cube":
         print cube(float(tokens[1]))
     elif tokens[0] == "pow":
-        print power(float(tokens[1]), float(tokens[2]))
+        print reduce(power, make_list_into_float(tokens[1:]))
     elif tokens[0] == "mod":
-        print mod(float(tokens[1]), float(tokens[2]))
+        print reduce(mod, make_list_into_float(tokens[1:]))
     else:
         print "not a valid option"

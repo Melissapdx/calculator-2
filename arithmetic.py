@@ -1,5 +1,10 @@
 """Math functions for calculator."""
 
+def make_list_into_float(list1):
+    """ makes list of strings into list into list of floats """
+    return [float(num) for num in list1]
+
+
 
 def add(num1, num2):
     """Return the sum of the two input integers."""
