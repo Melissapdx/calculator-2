@@ -15,6 +15,14 @@ repeat forever:
 
 from arithmetic import *
 
+def my_reduce(f, list1):
+    """ Function that takes in a function and a list
+    and does the same as the python reduce function """
+    ans = list1[0]
+    for i in list1[1:]:
+        ans = f(ans, i)
+    return ans
+
 while True:
     user_input = raw_input(">")
     tokens = user_input.split(" ")
