@@ -24,26 +24,41 @@ def my_reduce(f, list1):
         ans = f(ans, i)
     return ans
 
-while True:
-    user_input = raw_input(">")
+commands = open("commands.txt")
+answers = open("answers.txt", "w")
+
+for user_input in commands:
+#while True:
+    #user_input = raw_input(">")
     tokens = user_input.split(" ")
     if tokens[0] == "q":
         break
     elif tokens[0] == "+":
         print "{:.2f}".format(my_reduce(add, make_list_into_float(tokens[1:])))
+        answers.write("{:.2f} \n".format(my_reduce(add, make_list_into_float(tokens[1:]))))
     elif tokens[0] == "-":
         print "{:.2f}".format(my_reduce(subtract, make_list_into_float(tokens[1:])))
+        answers.write("{:.2f} \n".format(my_reduce(subtract, make_list_into_float(tokens[1:]))))
     elif tokens[0] == "*":
         print "{:.2f}".format(my_reduce(multiply, make_list_into_float(tokens[1:])))
+        answers.write("{:.2f} \n".format(my_reduce(multiply, make_list_into_float(tokens[1:]))))
     elif tokens[0] == "/":
         print "{:.2f}".format(my_reduce(divide, make_list_into_float(tokens[1:])))
+        answers.write("{:.2f} \n".format(my_reduce(divide, make_list_into_float(tokens[1:]))))
     elif tokens[0] == "square":
         print "{:.2f}".format(square(float(tokens[1])))
+        answers.write("{:.2f} \n".format(square(float(tokens[1]))))
     elif tokens[0] == "cube":
         print "{:.2f}".format(cube(float(tokens[1])))
+        answers.write("{:.2f} \n".format(cube(float(tokens[1]))))
     elif tokens[0] == "pow":
         print "{:.2f}".format(my_reduce(power, make_list_into_float(tokens[1:])))
+        answers.write("{:.2f} \n".format(my_reduce(power, make_list_into_float(tokens[1:]))))
     elif tokens[0] == "mod":
         print "{:.2f}".format(my_reduce(mod, make_list_into_float(tokens[1:])))
+        answers.write("{:.2f} \n".format(my_reduce(mod, make_list_into_float(tokens[1:]))))
     else:
         print "not a valid option"
+
+commands.close()
+answers.close()
